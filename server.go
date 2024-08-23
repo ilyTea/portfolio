@@ -15,16 +15,17 @@ func main() {
 	rtr.Use(middleware.RequestID)
 	rtr.Use(middleware.RealIP)
 	rtr.Use(middleware.Logger)
+	rtr.Use(middleware.Recoverer)
 
-	rtr.Get("/", homeHandler)
-	rtr.Get("/liltext", aLittleHandler)
+	rtr.Get("/", landingHandler)
+	rtr.Get("/projects", teaProjectHandler)
+	rtr.Get("/profile", teaProfileHandler)
 
 
 	http.ListenAndServe(":7447", rtr)
 }
 
-func homeHandler(w http.ResponseWriter, req *http.Request) {
-
+func landingHandler(w http.ResponseWriter, req *http.Request) {
 	ctx := make(map[string]string)
 	ctx["Name"] = "Cha"
 
@@ -37,6 +38,26 @@ func homeHandler(w http.ResponseWriter, req *http.Request) {
 	}
 }
 
-func aLittleHandler(w http.ResponseWriter, req *http.Request) {
-	w.Write([]byte("wow now im here"))
+func teaProjectHandler(w http.ResponseWriter, req *http.Request) {
+	ctx := make(map[string]string)
+	ctx["Name"] = "Cha"
+
+	tmpt, _ := template.ParseFiles("templates/index.html")
+
+	err := tmpt.Execute(w, ctx)
+	if err != nil {
+		log.Println("Could not execute template.")
+	}
+}
+
+func teaProfileHandler(w http.ResponseWriter, req *http.Request) {
+	ctx := make(map[string]string)
+	ctx["Name"] = "Cha"
+
+	tmpt, _ := template.ParseFiles("templates/profile.html")
+
+	err := tmpt.Execute(w, ctx)
+	if err != nil {
+		log.Println("Could not execute template.")
+	}
 }

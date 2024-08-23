@@ -21,30 +21,55 @@
 
       h1,
       h2,
+      h3,
       p {
         color: #ffffff;
       }
 
+      .page-container{
+        width: 100%;
+        height: 100%;
+        display: flex;
+      }
+
+      .navi-container{
+        position: fixed;
+        width: 100%;
+        height: 90px;
+        display: flex;
+      }
+
       .top-navi {
         width: 100%;
-        height: 60px;
-        padding-bottom: 40px;
+        margin-bottom: 30px;
         display: flex;
       }
 
       .drop-menu {
         width: 25%;
-        align-content: flex-start;
+        color: #cedddd;
+        display: flex;
+        align-content: stretch;
+        justify-content: flex-start;
+        align-items: center;
       }
 
       .tea-logo {
         width: 50%;
-        align-content: center;
+        color: #cedddd;
+        display: flex;
+        align-content: stretch;
+        justify-content: space-around;
+        align-items: center;
       }
 
       .tea-details {
         width: 25%;
-        align-content: flex-end;
+        color: #cedddd;
+        display: flex;
+        align-content: stretch;
+        justify-content: flex-end;
+        align-items: center;
       }
 
       .heading {
@@ -66,33 +91,38 @@
   </head>
 
   <body>
-    <div class="top-navi">
-      <div class="drop-menu">
-        <img url="simple dropdown tingy"></img>
+    <div id="page-container">
+      <div id="navi-container">
+        <div class="top-navi">
+          <div class="drop-menu">
+            <img url="simple dropdown tingy" alt="tabs"></img>
+          </div>
+          <div class="tea-logo">
+            <img url="mua logo" alt="logo"
+            hx-get="/projects"
+            hx-trigger="click"
+            hx-target="#loaded-template"
+            hx-swap="innerHTML"
+            ></img>
+          </div>
+          <div class="tea-details">
+            <img url="simple note tingy" alt="details" 
+            hx-get="/profile"
+            hx-trigger="click"
+            hx-target="#loaded-template"
+            hx-swap="innerHTML"
+            >
+          </img>
+          </div>
+        </div>
       </div>
-      <div class="tea-logo">
-        <img url="mua logo"></img>
-      </div>
-      <div class="tea-details">
-        <img url="simple note tingy"></img>
+      <div id="content-container">
+        <div id="template">
+          <div id="loaded-template">
+          </div>
+          <h3>wow this is cool</h3>
+        </div>
       </div>
     </div>
-
-    <h1 class="heading">Tea's Portfolio</h1>
-    <h2 class="sub-heading">blah blah blah blah blah bla bla blah blah blah</h2>
-
-    <div id="sumtext" class="box">
-      <p id="lol123">i will disappear</p>
-    </div>
-
-    <button
-      hx-get="/liltext"
-      hx-trigger="click"
-      hx-delete="/liltext"
-      hx-target="#lol123"
-      hx-swap="innerHTML"
-    >
-      if you click me!
-    </button>
   </body>
 </html>
