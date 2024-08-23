@@ -4,9 +4,19 @@
     <script src="https://unpkg.com/htmx.org@2.0.2"></script>
 
     <style>
+      /* colours 
+        #003636 dark underwater 
+        #00a1a1 mid ocean 
+        #08dada light ocean 
+        #acf7f7 blue sky 
+        #deffff light sky 
+        #cedddd title text
+        #b0c0c0 sub text
+        */
+
       body {
         /* background-image: url(""); */
-        background-color: #00a1a1;
+        background-color: #003636;
       }
 
       h1,
@@ -16,16 +26,25 @@
       }
 
       .top-navi {
+        width: 100%;
+        height: 60px;
+        padding-bottom: 40px;
         display: flex;
       }
 
       .drop-menu {
+        width: 25%;
+        align-content: flex-start;
       }
 
       .tea-logo {
+        width: 50%;
+        align-content: center;
       }
 
       .tea-details {
+        width: 25%;
+        align-content: flex-end;
       }
 
       .heading {
@@ -49,13 +68,13 @@
   <body>
     <div class="top-navi">
       <div class="drop-menu">
-        <iframe url="simple dropdown tingy"></iframe>
+        <img url="simple dropdown tingy"></img>
       </div>
       <div class="tea-logo">
-        <iframe url="mua logo"></iframe>
+        <img url="mua logo"></img>
       </div>
       <div class="tea-details">
-        <iframe url="simple note tingy"></iframe>
+        <img url="simple note tingy"></img>
       </div>
     </div>
 
@@ -69,6 +88,7 @@
     <button
       hx-get="/liltext"
       hx-trigger="click"
+      hx-delete="/liltext"
       hx-target="#lol123"
       hx-swap="innerHTML"
     >
