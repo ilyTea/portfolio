@@ -17,7 +17,7 @@ func main() {
 	rtr.Use(middleware.Logger)
 
 	rtr.Get("/", homeHandler)
-	rtr.Get("/contact-details", contactDetailsHandler)
+	rtr.Get("/liltext", aLittleHandler)
 
 
 	http.ListenAndServe(":7447", rtr)
@@ -37,7 +37,6 @@ func homeHandler(w http.ResponseWriter, req *http.Request) {
 	}
 }
 
-func contactDetailsHandler(w http.ResponseWriter, req *http.Request) {
-
+func aLittleHandler(w http.ResponseWriter, req *http.Request) {
 	w.Write([]byte("wow now im here"))
 }

@@ -4,27 +4,72 @@
     <script src="https://unpkg.com/htmx.org@2.0.2"></script>
 
     <style>
-      h1 {
+      body {
+        /* background-image: url(""); */
+        background-color: #00a1a1;
+      }
+
+      h1,
+      h2,
+      p {
+        color: #ffffff;
+      }
+
+      .top-navi {
+        display: flex;
+      }
+
+      .drop-menu {
+      }
+
+      .tea-logo {
+      }
+
+      .tea-details {
+      }
+
+      .heading {
         text-align: center;
+        color: #cedddd;
+      }
+
+      .sub-heading {
+        text-align: center;
+        color: #b0c0c0;
       }
 
       .box {
         padding: 10px;
         margin: 10px;
-        border: 1px solid #1a8b408e;
+        border: 1px solid #ffffff;
       }
     </style>
   </head>
 
   <body>
-    <h1>Tea's Portfolio</h1>
-
-    <div id="contact-details" class="box">
-      <p>i will disappear</p>
+    <div class="top-navi">
+      <div class="drop-menu">
+        <iframe url="simple dropdown tingy"></iframe>
+      </div>
+      <div class="tea-logo">
+        <iframe url="mua logo"></iframe>
+      </div>
+      <div class="tea-details">
+        <iframe url="simple note tingy"></iframe>
+      </div>
     </div>
+
+    <h1 class="heading">Tea's Portfolio</h1>
+    <h2 class="sub-heading">blah blah blah blah blah bla bla blah blah blah</h2>
+
+    <div id="sumtext" class="box">
+      <p id="lol123">i will disappear</p>
+    </div>
+
     <button
-      hx-get="/contact-details"
-      hx-target="#contact-details"
+      hx-get="/liltext"
+      hx-trigger="click"
+      hx-target="#lol123"
       hx-swap="innerHTML"
     >
       if you click me!
