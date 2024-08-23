@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Tea's Portfolio</title>
+    <script src="https://unpkg.com/htmx.org@2.0.2"></script>
+
+    <style>
+      h1 {
+        text-align: center;
+      }
+
+      .box {
+        padding: 10px;
+        margin: 10px;
+        border: 1px solid #1a8b408e;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Tea's Portfolio</h1>
+
+    <div id="contact-details" class="box">
+      <p>i will disappear</p>
+    </div>
+    <button
+      hx-get="/contact-details"
+      hx-target="#contact-details"
+      hx-swap="innerHTML"
+    >
+      if you click me!
+    </button>
+  </body>
+</html>

@@ -1,8 +1,9 @@
 package main
 
 import (
+	"html/template"
+	"log"
 	"net/http"
-	"time"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
@@ -14,20 +15,29 @@ func main() {
 	rtr.Use(middleware.RequestID)
 	rtr.Use(middleware.RealIP)
 	rtr.Use(middleware.Logger)
-	rtr.Use(middleware.Recoverer)
 
-  	// Set a timeout value on the request context (ctx), that will signal
-  	// through ctx.Done() that the request has timed out and further
-  	// processing should be stopped.
-  	rtr.Use(middleware.Timeout(60 * time.Second))
-
-	rtr.Get("/dog", func(w http.ResponseWriter, req *http.Request) {
-		
-	})
-
-
-
+	rtr.Get("/", homeHandler)
+	rtr.Get("/contact-details", contactDetailsHandler)
 
 
 	http.ListenAndServe(":7447", rtr)
+}
+
+func homeHandler(w http.ResponseWriter, req *http.Request) {
+
+	ctx := make(map[string]string)
+	ctx["Name"] = "Cha"
+
+	tmpt, _ := template.ParseFiles("templates/index.html")
+
+	err := tmpt.Execute(w, ctx)
+
+	if err != nil {
+		log.Println("Could not execute template.")
+	}
+}
+
+func contactDetailsHandler(w http.ResponseWriter, req *http.Request) {
+
+	w.Write([]byte("wow now im here"))
 }
