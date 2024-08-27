@@ -15,114 +15,17 @@
         */
 
       body {
-        /* background-image: url(""); */
-        background-color: #003636;
+        padding: 0;
+        margin: 0;
       }
 
-      h1,
-      h2,
-      h3,
-      p {
-        color: #ffffff;
-      }
-
-      .page-container{
+      .page-container {
         width: 100%;
-        height: 100%;
-        display: flex;
-      }
-
-      .navi-container{
-        position: fixed;
-        width: 100%;
-        height: 90px;
-        display: flex;
-      }
-
-      .top-navi {
-        width: 100%;
-        margin-bottom: 30px;
-        display: flex;
-      }
-
-      .drop-menu {
-        width: 25%;
-        color: #cedddd;
-        display: flex;
-        align-content: stretch;
-        justify-content: flex-start;
-        align-items: center;
-      }
-
-      .tea-logo {
-        width: 50%;
-        color: #cedddd;
-        display: flex;
-        align-content: stretch;
-        justify-content: space-around;
-        align-items: center;
-      }
-
-      .tea-details {
-        width: 25%;
-        color: #cedddd;
-        display: flex;
-        align-content: stretch;
-        justify-content: flex-end;
-        align-items: center;
-      }
-
-      .heading {
-        text-align: center;
-        color: #cedddd;
-      }
-
-      .sub-heading {
-        text-align: center;
-        color: #b0c0c0;
-      }
-
-      .box {
-        padding: 10px;
-        margin: 10px;
-        border: 1px solid #ffffff;
       }
     </style>
   </head>
 
   <body>
-    <div id="page-container">
-      <div id="navi-container">
-        <div class="top-navi">
-          <div class="drop-menu">
-            <img url="simple dropdown tingy" alt="tabs"></img>
-          </div>
-          <div class="tea-logo">
-            <img url="mua logo" alt="logo"
-            hx-get="/projects"
-            hx-trigger="click"
-            hx-target="#loaded-template"
-            hx-swap="innerHTML"
-            ></img>
-          </div>
-          <div class="tea-details">
-            <img url="simple note tingy" alt="details" 
-            hx-get="/profile"
-            hx-trigger="click"
-            hx-target="#loaded-template"
-            hx-swap="innerHTML"
-            >
-          </img>
-          </div>
-        </div>
-      </div>
-      <div id="content-container">
-        <div id="template">
-          <div id="loaded-template">
-          </div>
-          <h3>wow this is cool</h3>
-        </div>
-      </div>
-    </div>
+    <div id="page-container"></div>
   </body>
 </html>

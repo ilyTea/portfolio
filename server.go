@@ -29,7 +29,7 @@ func landingHandler(w http.ResponseWriter, req *http.Request) {
 	ctx := make(map[string]string)
 	ctx["Name"] = "Cha"
 
-	tmpt, _ := template.ParseFiles("templates/index.html")
+	tmpt, _ := template.ParseFiles("templates/seanmockup.html")
 
 	err := tmpt.Execute(w, ctx)
 

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML 5 Boilerplate</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .header {
+        width: 100%;
+        height: 150px;
+        position: fixed;
+        z-index: 2;
+        background-color: pink;
+      }
+      .bodyContainer {
+        padding-top: 150px;
+        position: relative;
+      }
+      .section1 {
+        width: 100%;
+        height: 700px;
+        z-index: 0;
+        background-color: paleturquoise;
+      }
+      .section1withImage {
+        width: 100%;
+        height: 700px;
+        z-index: 0;
+        display: block;
+        margin: auto;
+        background-image: url("NICEimage.png");
+      }
+      .secColor2 {
+        background-color: bisque;
+      }
+      .secColor3 {
+        background-color: burlywood;
+      }
+      .displayFlex1 {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+      }
+      .h100 {
+        height: 100%;
+      }
+      .w40 {
+        width: 40%;
+      }
+      .w60 {
+        width: 60%;
+      }
+      .textContainer p {
+        margin: 0 30px 0 30px;
+      }
+      .textContainer h3 {
+        right: 0;
+        margin: 0;
+        padding-right: 50px;
+        position: absolute;
+      }
+
+      @media screen and (max-width: 600px) {
+        .section1withImage {
+          flex-direction: column;
+          height: 1400px;
+        }
+        .imageBox {
+          display: none;
+        }
+      }
+
+      @media screen and (max-width: 992px) {
+        .section1withImage {
+          flex-direction: column;
+        }
+        .imageBox {
+          display: none;
+        }
+      }
+    </style>
+    <script>
+      function clickHandler() {
+        myVar = document.getElementById("anchorName1");
+        myVar.scrollIntoView();
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="container" style="background-color: aliceblue; width: 100vw">
+      <div class="header">
+        <p>header text</p>
+        <button id="buttonAnchor" onclick="clickHandler()">Click me</button>
+      </div>
+      <div class="bodyContainer">
+        <div class="displayFlex1 section1withImage">
+          <div class="h100 w40 displayFlex1 imageBox">
+            <div
+              class="imageContainerSec1"
+              style="background-color: aqua; width: 60%; height: 90%"
+            ></div>
+          </div>
+          <div class="h100 w60">
+            <div style="width: 90%; height: 90%" class="displayFlex1">
+              <div class="textContainer">
+                <p style="line-height: 40px; font-size: 130%; color: white">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+                  possimus consequuntur magnam natus aut libero laudantium quae
+                  atque, unde veniam vero ipsam facere distinctio voluptatum,
+                  laborum commodi temporibus corporis soluta. Provident corrupti
+                  reprehenderit officiis non accusamus modi magni architecto
+                  eos, excepturi commodi rerum error sed porro eius nesciunt
+                  praesentium animi inventore, itaque sapiente vitae similique
+                  ipsa placeat, totam nostrum. Doloribus ea harum unde, ut
+                  voluptas hic molestias pariatur possimus maiores voluptatum
+                  eaque quod in accusamus modi doloremque officiis praesentium
+                  cumque quidem voluptatem nam est! Consequuntur aliquam soluta
+                  dicta nisi et!
+                </p>
+                <h3>MICHAEL BISPING</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section1 secColor2"></div>
+        <div class="section1 secColor3">
+          <a id="anchorName1"></a>
+        </div>
+      </div>
+    </div>
+    <footer style="height: 200px">THIS IS A FOOTER</footer>
+  </body>
+</html>
