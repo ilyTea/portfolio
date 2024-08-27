@@ -6,7 +6,7 @@ inspiration:
 
 [minimal design](https://www.pinterest.com/pin/450852612696095000/)
 
-[laufey](https://www.laufeymusic.com/)
+[inspo lauf](https://www.laufeymusic.com/)
 
 [different colours](https://www.pinterest.com/pin/450852612693946374/)
 
@@ -14,3 +14,4 @@ inspiration:
 
 [animations](https://www.joshwcomeau.com/animation/css-transitions/#animation-performance)
 
+[host + domain](https://mochahost.com/domains?upm-dac-query=bigdreams)
