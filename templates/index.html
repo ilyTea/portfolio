@@ -24,11 +24,47 @@
         padding: 0;
         margin: 0;
       }
+      ::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 7px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: rgba(44, 41, 31, 0.5);
+        -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #cfcdca;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #a7a39b;
+      }
+      ::-webkit-overflow-scrolling:touch {
+        background: #707070;
+        width: 6px;
+      }
+
       .header {
         height: 6rem;
         width: 100%;
         position: fixed;
         z-index: 888;
+        display: none;
+        justify-content: flex-end;
+        align-items: center;
+        align-content: center;
+        flex-direction: row;
         background-color: rgb(167, 210, 250);
       }
       .body-container {
@@ -38,20 +74,20 @@
         padding: 0;
         margin: 0;
         position: relative;
+        overflow-y: auto;
       }
       /* grid overall and inside the grid add flexes in each column */
       .section-landing {
         display: flex;
-        align-content: center;
-        justify-content: center;
         width: 100%;
-        height: 80rem;
-        background-color: rgb(248, 243, 226);
+        height: 85rem;
+        background-color: rgb(227, 248, 226);
       }
       .landing-pfp {
         margin-left: 10rem;
-        width: 50rem;
-        height: 90%;
+        margin-top: 6rem;
+        width: 55rem;
+        height: 70rem;
         background-color: rgb(170, 171, 199);
       }
       .landing-logo {
@@ -65,23 +101,23 @@
         height: 90%;
       }
       .splash-text {
+        display: flex;
       }
       .section-projects-dt {
         display: flex;
         width: 100%;
-        height: 80rem;
+        height: 85rem;
         background-color: rgb(255, 244, 183);
       }
       .section-projects-mb {
         display: none;
-
         width: 100%;
         height: 40rem; /* make it according to project count maybe add a couple tmpts*/
         background-color: rgb(233, 253, 177);
       }
       .section-otherstuffs {
         width: 100%;
-        height: 80rem;
+        height: 85rem;
         background-color: rgb(235, 210, 158);
       }
       .footer {
@@ -96,21 +132,39 @@
         justify-content: center;
         align-items: center;
       }
+      .showheader {
+        display: flex;
+        transition-duration: 2s;
+      }
     </style>
     <script src="https://unpkg.com/htmx.org@2.0.2"></script>
     <script>
-      //some js
+      window.addEventListener("scroll", function () {
+        // current scroll position
+        const currentScrollPos = window.pageYOffset;
+        console.log("wwww");
+        if (currentScrollPos > 300) {
+          // user has scrolled up
+          document.querySelector(".header").classList.add("showheader");
+        } else {
+          // user has scrolled down
+          document.querySelector(".header").classList.remove("showheader");
+        }
+
+        // update previous scroll position
+        prevScrollPos = currentScrollPos;
+      });
     </script>
   </head>
 
   <body>
     <div
-      id="wholefkncontainer"
-      style="background-color: rgb(255, 48, 48); width: 100vw; padding: 0px"
+      id="wholefuggincontainer"
+      style="background-color: beige; width: 100vw; padding: 0px"
     >
       <div class="header">
-        <div class="header-logo"></div>
-        <div class="header-contact"></div>
+        <div class="header-logo">wwwwwww</div>
+        <div class="header-contact">eeeeeeeeeee</div>
       </div>
       <div class="body-container">
         <div class="section-landing">
