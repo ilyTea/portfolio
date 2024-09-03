@@ -78,6 +78,10 @@
         align-content: center;
         flex-direction: row;
         border: 5px solid rgb(167, 210, 250);
+        transition-duration: 1s;
+      }
+      .header.showheader {
+        display: flex;
       }
       .body-container {
         width: 100%;
@@ -93,6 +97,11 @@
         display: flex;
         width: 100%;
         height: 85rem;
+        background-image: url("/assets/landingback.jpg");
+        background-repeat: no-repeat;
+        background-attachment: absolute;
+        background-size: cover;
+
         border: 5px solid rgb(227, 248, 226);
       }
       .landing-pfp {
@@ -104,7 +113,7 @@
       .landing-logo {
         position: absolute;
         display: block;
-        margin: 5rem 75% 0 35%;
+        margin: 5rem 0% 0% 35%;
         height: 10%;
         width: 60rem;
         border: 5px solid rgb(176, 212, 193);
@@ -139,16 +148,18 @@
         height: 6rem;
         border: 5px solid rgb(83, 71, 57);
       }
+      .footer p {
+        display: flex;
+        margin-top: 4rem;
+        justify-content: center;
+        font-size: 1.3rem;
+      }
       .flexdisplayting {
         display: flex;
         flex-wrap: wrap;
         align-content: center;
         justify-content: center;
         align-items: center;
-      }
-      .showheader {
-        display: flex;
-        transition-duration: 2s;
       }
     </style>
     <script src="https://unpkg.com/htmx.org@2.0.2"></script>
@@ -157,7 +168,7 @@
         // current scroll position
         const currentScrollPos = window.pageYOffset;
         console.log("wwww");
-        if (currentScrollPos > 300) {
+        if (currentScrollPos > 400) {
           // user has scrolled up
           document.querySelector(".header").classList.add("showheader");
         } else {
