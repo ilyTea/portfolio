@@ -5,164 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Big Dreams Club</title>
-    <style>
-      /* colours 
-        #003636 dark underwater 
-        #00a1a1 mid ocean 
-        #08dada light ocean 
-        #acf7f7 blue sky 
-        #deffff light sky 
-        #cedddd title text
-        #b0c0c0 sub text
-
-        ideas
-        - pfp flies in like it lands on an airplane window
-        - home landing background is a window pict from an airplane seat, all animated
-        - under the clouds (scroll a lil to snap past clouds to 
-        make it look like moshimonsters animation)
-        - paper rip text rugrats style animation 3fps
-        - (day)plane city animated >> skyscrapers/buildings closer >> 
-        lit up bedroom warm colors
-
-        -- separate tab for promo
-        -- separate tab for resume
-        */
-      * {
-        padding: 0;
-        margin: 0;
-        overflow-x: hidden;
-      }
-      p {
-        padding: 0;
-        margin: 0;
-      }
-      ::-webkit-scrollbar {
-        -webkit-appearance: none;
-        width: 7px;
-      }
-
-      ::-webkit-scrollbar-thumb {
-        border-radius: 4px;
-        background-color: rgba(44, 41, 31, 0.5);
-        -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
-      }
-
-      ::-webkit-scrollbar {
-        width: 5px;
-      }
-
-      ::-webkit-scrollbar-track {
-        background: #f1f1f1;
-      }
-
-      ::-webkit-scrollbar-thumb {
-        background: #cfcdca;
-      }
-
-      ::-webkit-scrollbar-thumb:hover {
-        background: #a7a39b;
-      }
-      ::-webkit-overflow-scrolling:touch {
-        background: #707070;
-        width: 5px;
-      }
-
-      .header {
-        height: 6rem;
-        width: 100%;
-        position: fixed;
-        z-index: 888;
-        display: none;
-        justify-content: flex-end;
-        align-items: center;
-        align-content: center;
-        flex-direction: row;
-        border: 5px solid rgb(167, 210, 250);
-        transition-duration: 1s;
-      }
-      .header.showheader {
-        display: flex;
-      }
-      .body-container {
-        width: 100%;
-        padding-top: 6rem; /* remove when realised how to show no header till a point */
-        z-index: 8;
-        padding: 0;
-        margin: 0;
-        position: relative;
-        overflow-y: auto;
-      }
-      /* grid overall and inside the grid add flexes in each column */
-      .section-landing {
-        display: flex;
-        width: 100%;
-        height: 85rem;
-        background-image: url("/assets/landingback.jpg");
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-
-        border: 5px solid rgb(227, 248, 226);
-      }
-      .landing-pfp {
-        width: 40%;
-        min-width: 50rem;
-        height: 95%;
-        border: 5px solid rgb(170, 171, 199);
-      }
-      .landing-logo {
-        position: absolute;
-        display: block;
-        margin: 5rem 0% 0% 35%;
-        height: 10%;
-        width: 60rem;
-        border: 5px solid rgb(176, 212, 193);
-      }
-      .landing-splash {
-        width: 60%;
-        height: 95%;
-        border: 5px solid rgb(212, 176, 201);
-      }
-      .splash-text {
-        display: flex;
-      }
-      .section-projects-dt {
-        display: flex;
-        width: 100%;
-        height: 80rem;
-        border: 5px solid rgb(255, 244, 183);
-      }
-      .section-projects-mb {
-        display: none;
-        width: 100%;
-        height: 40rem; /* make it according to project count maybe add a couple tmpts*/
-        border: 5px solid rgb(233, 253, 177);
-      }
-      .section-otherstuffs {
-        width: 100%;
-        height: 80rem;
-        border: 5px solid rgb(235, 210, 158);
-      }
-      .footer {
-        width: 100%;
-        height: 6rem;
-        border: 5px solid rgb(83, 71, 57);
-      }
-      .footer p {
-        display: flex;
-        margin-top: 4rem;
-        justify-content: center;
-        font-size: 1.3rem;
-      }
-      .flexdisplayting {
-        display: flex;
-        flex-wrap: wrap;
-        align-content: center;
-        justify-content: center;
-        align-items: center;
-      }
-    </style>
+    <link rel="stylesheet" href="index.css" />
     <script src="https://unpkg.com/htmx.org@2.0.2"></script>
+
     <script>
       window.addEventListener("scroll", function () {
         // current scroll position
@@ -175,13 +20,11 @@
           // user has scrolled down
           document.querySelector(".header").classList.remove("showheader");
         }
-
         // update previous scroll position
         prevScrollPos = currentScrollPos;
       });
     </script>
   </head>
-
   <body>
     <div
       id="whole-fuggin-container"
@@ -195,7 +38,7 @@
         <button class="header-contact">Contact Me</button>
       </div>
       <div class="body-container">
-        <div class="section-landing">
+        <div class="section-landing landing-image">
           <div class="landing-pfp flexdisplayting">bigg picta</div>
           <div class="landing-logo flexdisplayting">beeeeg logo</div>
           <div class="landing-splash flexdisplayting">
@@ -209,7 +52,10 @@
           <div class="project-photo"></div>
           <div class="project-desc"></div>
         </div>
-        <div class="section-projects-mb"></div>
+        <div class="section-projects-mb">
+          <div class="project-photo"></div>
+          <div class="project-desc"></div>
+        </div>
         <div class="section-otherstuffs"></div>
       </div>
       <div class="footer">
