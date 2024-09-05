@@ -15,3 +15,5 @@ inspiration:
 [animations](https://www.joshwcomeau.com/animation/css-transitions/#animation-performance)
 
 [host+domain](https://mochahost.com/domains?upm-dac-query=bigdreams) [host+domain2](https://www.netim.com/en/)
+
+[resume ayo](https://aarontorres.dev/resume)
